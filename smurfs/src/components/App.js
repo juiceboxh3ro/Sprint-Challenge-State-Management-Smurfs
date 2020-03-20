@@ -34,7 +34,10 @@ export default function App () {
     <div className="App">
       <SmurfContext.Provider value={myProps} >
         <SmurfForm />
-        <Smurfs />
+        <div>
+          <h2>My Smurf Village</h2>
+          <Smurfs />
+        </div>
       </SmurfContext.Provider>
     </div>
   )
