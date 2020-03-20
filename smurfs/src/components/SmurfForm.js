@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import SmurfContext from '../context/SmurfContext'
 
+import papa from '../img/papa.png'
+
 export const SmurfForm = () => {
   const { newSmurf, setNewSmurf, initialSmurf, setTrigger } = useContext(SmurfContext);
 
@@ -28,21 +30,20 @@ export const SmurfForm = () => {
 
   return (
     <form autoComplete="off" id="formy" onSubmit={submitForm}>
+      <img id="papa" src={papa} alt="Papa's in the house"/>
       <section className="input-group">
-        <label htmlFor="name">Name</label><br />
-        <input onChange={handleChanges} id="name" name="name" type="text" value={newSmurf.name}/>
+        <label className="the-label" htmlFor="name"><span className="the-label">Name</span></label><br />
+        <input onChange={handleChanges} autoFocus id="name" name="name" type="text" value={newSmurf.name}/>
       </section>
       
       <section className="input-group">
         <label htmlFor="age">Age</label><br />
-        <input onChange={handleChanges} id="age" name="age" type="range" min="1" max="150" className="slider" value={newSmurf.age}/>
-        <p>{newSmurf.age}</p>
+        <input onChange={handleChanges} autoFocus id="age" name="age" type="text" value={newSmurf.age}/>
       </section>
 
       <section className="input-group">
         <label htmlFor="height">Height</label><br />
-        <input onChange={handleChanges} id="height" name="height" type="range" min="1" max="200" className="slider" value={newSmurf.height}/>
-        <p>{newSmurf.height}</p>
+        <input onChange={handleChanges} autoFocus id="height" name="height" type="text" value={newSmurf.height}/>
       </section>
 
       <button className="smurf-button" type="submit">Add Smurf</button>
